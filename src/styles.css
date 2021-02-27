@@ -1,12 +1,10 @@
 .container {
   background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   border-radius: 10px;
-  box-shadow: gray;
 }
 
 .search-city {
   display: block;
-
   margin-top: 30px;
   margin-bottom: 5px;
 }
@@ -16,4 +14,18 @@ h1 {
 
 ul {
   list-style: none;
+}
+.current-temp {
+  font-size: 40px;
+}
+.real-feel {
+  position: relative;
+  left: 30px;
+}
+.hour-intervals {
+  text-align: center;
+}
+.temp-by-hour {
+  font-size: 12px;
+  text-align: center;
 }

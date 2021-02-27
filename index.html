@@ -12,7 +12,7 @@
   </head>
 <body>
   <div class="container">
-    <div class="weather-wrap">
+    <h2></h2>
     <form class="search-city">
       <input type="text" id="current-city" placeholder="Current City">
       <input type="submit" value="Search" id="search-button">
@@ -27,8 +27,8 @@
     <div class="row">
       <div class="col-6">
         <ul>
-          <li>🌤10℃</li>
-          <li>real feel 5℃</li>
+          <li class="current-temp">🌤10℃</li>
+          <li class="real-feel">real feel 5℃</li>
         </ul>
       </div>
       <div class="col-6">
@@ -38,26 +38,26 @@
           <li>wind 🌫 5mph</li>
         </ul>
       </div>
+    </div>  
       <hr>
-<div class="row" class="time-intervals">
-  <div class="col-2" class="2-hour">2pm</div>
-  <div class="col-2" class="4-hour">4pm</div>
-  <div class="col-2" class="6-hour">6pm</div>
-  <div class="col-2" class="8-hour">8pm</div>
-  <div class="col-2" class="10-hour">10pm</div>
-  <div class="col-2" class="12-hour">12pm</div>
+<div class="row hour-intervals">
+  <div class="col-2 2-hour">2pm</div>
+  <div class="col-2 4-hour">4pm</div>
+  <div class="col-2 6-hour">6pm</div>
+  <div class="col-2 8-hour">8pm</div>
+  <div class="col-2 10-hour">10pm</div>
+  <div class="col-2 12-hour">12pm</div>
 </div>
-<div class="row" class="temp-by-hour">
-  <div class="col-2" class="2-hour-temp">5℃</div>
-  <div class="col-2" class="4-hour-temp">5℃</div>
-  <div class="col-2" class="6-hour-temp">5℃</div>
-  <div class="col-2" class="8-hour-temp">5℃</div>
-  <div class="col-2" class="10-hour-temp">5℃</div>
-  <div class="col-2" class="12-hour-temp">5℃</div>
+<div class="row temp-by-hour">
+  <div class="col-2 two-hour-temp">5℃</div>
+  <div class="col-2 4-hour-temp">5℃</div>
+  <div class="col-2 6-hour-temp">5℃</div>
+  <div class="col-2 8-hour-temp">5℃</div>
+  <div class="col-2 10-hour-temp">5℃</div>
+  <div class="col-2 12-hour-temp">5℃</div>
 </div>
-
-    </div>
-    </div>
+<hr>
+  </div>
   </div>
   <script src="src/app.js"></script>
 </body>
