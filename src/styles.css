@@ -1,0 +1,19 @@
+.container {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  border-radius: 10px;
+  box-shadow: gray;
+}
+
+.search-city {
+  display: block;
+
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
