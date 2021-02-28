@@ -4,30 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/styles.css">
+  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/fd168d6548.js" crossorigin="anonymous"></script>
-    <title>Weather App</title>
+  <link rel="stylesheet" href="src/styles.css">
+  <title>Weather App</title>
   </head>
 <body>
   <div class="container">
-    <h2></h2>
-    <form class="search-city">
-      <input type="text" id="current-city" placeholder="Current City">
-      <input type="submit" value="Search" id="search-button">
-      <button id="location"><i class="fas fa-location-arrow"></i></button>
-    </form>
-    <div class="row">
+    
+    <div class="row header">
       <div class="col-4">
-    <h1>St. Louis</h1> </div>
-    <div class="col-3" id="date-time">date/time</div>
+    <h1>St. Louis</h1> 
+        <ul>
+          <li id="date-time">Friday 7:30</li>
+        </ul>
+      </div>
     </div>
+
     
     <div class="row">
       <div class="col-6">
         <ul>
-          <li class="current-temp">🌤10℃</li>
+          <li class="current-temp"><span class="sun-moon">🌤</span>10℃</li>
           <li class="real-feel">real feel 5℃</li>
         </ul>
       </div>
@@ -57,7 +57,7 @@
   <div class="col-2 12-hour-temp">5℃</div>
 </div>
 <hr>
-  </div>
+  
   </div>
   <script src="src/app.js"></script>
 </body>

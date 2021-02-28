@@ -1,15 +1,24 @@
 .container {
-  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  background-image: linear-gradient(
+    to top,
+    #e0dee7 0%,
+    #e3e0eb 1%,
+    #faf6f7 100%
+  );
+  /*background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);*/
   border-radius: 10px;
+  max-width: 600px;
 }
-
-.search-city {
-  display: block;
+.header {
   margin-top: 30px;
-  margin-bottom: 5px;
 }
 h1 {
   text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+#date-time {
+  margin-top: 0;
 }
 
 ul {
