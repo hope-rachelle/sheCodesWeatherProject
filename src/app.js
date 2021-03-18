@@ -11,19 +11,19 @@ let minute = now.getMinutes();
 if (minute < 10) {
     minute = `0${minute}`;} 
 document.querySelector("#date-time").innerHTML = `${weekDay}, ${month} ${day} ${hour}:${minute}` ;
-let nextHour = `${hour += 2}`;
-if (hour > 12) {
-    nextHour = `${hour - 12}`; }
+let nextHour = `${Number(hour + 2)}`;
+if (nextHour > 12) {
+    nextHour = `${Number(nextHour - 12)}`;
 let hourCode = "pm";
 if (hour < 12) {
     hourCode = "am"; }
 
-document.querySelector("#two-hour").innerHTML = `${nextHour}${hourCode}`;
-document.querySelector("#four-hour").innerHTML = `${nextHour}${hourCode}`;
-document.querySelector("#six-hour").innerHTML = `${nextHour}${hourCode}`;
-document.querySelector("#eight-hour").innerHTML = `${nextHour}${hourCode}`;
-document.querySelector("#ten-hour").innerHTML = `${nextHour}${hourCode}`;
-document.querySelector("#twelve-hour").innerHTML = `${nextHour}${hourCode}`;
+document.querySelector("#two-hour").innerHTML = `${Number(nextHour)}${hourCode}`;
+document.querySelector("#four-hour").innerHTML = `${Number(nextHour) + 4}${hourCode}`;
+document.querySelector("#six-hour").innerHTML = `${Number(nextHour) + 6}${hourCode}`;
+document.querySelector("#eight-hour").innerHTML = `${Number(nextHour) + 8}${hourCode}`;
+document.querySelector("#ten-hour").innerHTML = `${Number(nextHour) + 10}${hourCode}`;
+document.querySelector("#twelve-hour").innerHTML = `${Number(nextHour) + 12}${hourCode}`;
 function displayWeather(conditions) {
     console.log(conditions);
     let temp = Math.round(conditions.data.current.temp);
