@@ -14,30 +14,33 @@
   </head>
 <body>
   <div class="container">
-    
+    <form class="current-city">
+      <input type="text" id="current-city" placeholder="Type a City..." autocomplete="off" />
+      <input type="submit" value="Search" id="button" />
+    </form>
     <div class="row header">
      <div class="col-8">
     <h1 id="city">St. Louis</h1>
         <ul>
           <li id="date-time">Friday 7:30</li>
+          <li id="description"></li>
         </ul>
       </div>
     </div>
-
-    
     <div class="row">
       <div class="col-6">
         <ul>
-          <li class="current-temp"> <span id="current-temp"></span>℃</li>
+          <li class="current-temp">⛅<span id="current-temp"></span></li>
           
         </ul>
       </div>
       <div class="col-6">
         <ul>
-          <li>real feel <span id="real-feel"></span>℃</li>
           
+          <li>real feel <span id="real-feel"></span></li>
           <li>humidity 💧 <span id="humidity"></span>%</li>
           <li>wind 🌫 <span id="wind"></span>mph</li>
+          <li id="fahrenheit">convert to °fahrenheit</li>
         </ul>
       </div>
     </div>  
