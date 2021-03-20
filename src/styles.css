@@ -31,8 +31,14 @@ ul {
   list-style: none;
 }
 .current-temp {
-  font-size: 40px;
-  padding: 0 auto;
+  font-size: 45px;
+  padding-left: 25px;
+}
+#icon {
+  font-size: 45px;
+}
+.element {
+  padding-left: 20px;
 }
 #fahrenheit:hover {
   color: gray;

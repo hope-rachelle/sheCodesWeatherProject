@@ -19,30 +19,23 @@
       <input type="submit" value="Search" id="button" />
     </form>
     <div class="row header">
-     <div class="col-8">
+     <div class="col-6">
     <h1 id="city">St. Louis</h1>
         <ul>
           <li id="date-time">Friday 7:30</li>
-          <li id="description"></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <ul>
-          <li class="current-temp">⛅<span id="current-temp"></span></li>
+          <li><span id="description"></span><span id="icon">⛅</span></li>
           
         </ul>
-      </div>
-      <div class="col-6">
-        <ul>
-          
-          <li>real feel <span id="real-feel"></span></li>
-          <li>humidity 💧 <span id="humidity"></span>%</li>
-          <li>wind 🌫 <span id="wind"></span>mph</li>
-          <li id="fahrenheit">convert to °fahrenheit</li>
-        </ul>
-      </div>
+     </div>
+        <div class="col-6">
+          <ul>
+            <li class="current-temp"><span id="current-temp"></span></li>
+            <li class="element">fahrenheit <span id="fahrenheit"></span></li>
+            <li class="element">real feel <span id="real-feel"></span></li>
+            <li class="element">humidity 💧 <span id="humidity"></span>%</li>
+            <li class="element">wind 🌫 <span id="wind"></span>mph</li>
+          </ul>
+        </div>
     </div>  
       <hr>
 <div class="row hour-intervals">
@@ -62,7 +55,7 @@
   <div class="col-2" id="sixth-hour-temp">5℃</div>
 </div>
 <hr>
-  
+  </div>
   </div>
   <script src="src/app.js"></script>
 </body>

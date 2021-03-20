@@ -33,7 +33,9 @@ function changeCity(event) {
   let apiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=metric`;
   axios.get(`${apiWeather}`).then(showWeather);
 }
+//show weather for city search//
 function showWeather(response) {
+    console.log(response);
   document.querySelector("#city")
   .innerHTML = response.data.name;
   document.querySelector("#current-temp")
@@ -42,6 +44,8 @@ function showWeather(response) {
   .innerHTML = `${Math.round(response.data.main.feels_like)}°C`;
   document.querySelector("#humidity")
   .innerHTML = `${Math.round(response.data.main.humidity)}`;
+  document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  document.querySelector("#fahrenheit").innerHTML = `${Math.round(((response.data.main.temp)* 9)/ 5 + 32)}℉`;  
 }
 document.querySelector(".current-city").addEventListener("submit", changeCity);
 
@@ -49,9 +53,10 @@ function displayWeather(conditions) {
     console.log(conditions);
     let celcius = Math.round(conditions.data.list[0].main.temp);
     let realFeel = Math.round(conditions.data.list[0].main.feels_like);
-    //let forecastHour = forecastHour(conditions.data.list[2].dt*1000);
+    let fahrenheitTemp = (celcius * 9)/ 5 + 32;
     document.querySelector("#city").innerHTML = conditions.data.city.name;
     document.querySelector("#current-temp").innerHTML = `${celcius}℃`;
+    document.querySelector("#fahrenheit").innerHTML = `${Math.round(fahrenheitTemp)}℉`;
     document.querySelector("#description").innerHTML = conditions.data.list[0].weather[0].description;
     document.querySelector("#real-feel").innerHTML = `${realFeel}℃`;
     document.querySelector("#humidity").innerHTML = conditions.data.list[0].main.humidity;
@@ -83,18 +88,18 @@ function displayFahrenheit(event) {
     event.preventDefault();
     let fahrenheitTemp = (celcius * 9)/ 5 + 32;
     let fahrenheitFeel = (realFeel * 9)/ 5 + 32;
-    let hourlyTemp = (forecastTemp * 9)/ 5 +32;
+    //let hourlyTemp = (forecastTemp * 9)/ 5 +32;
     document.querySelector("#current-temp").innerHTML = `${Math.round(fahrenheitTemp)}℉`;
     document.querySelector("#real-feel").innerHTML = `${Math.round(fahrenheitFeel)}℉`;
-    document.querySelector("#first-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    document.querySelector("#second-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    document.querySelector("#third-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    document.querySelector("#fourth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    document.querySelector("#fifth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    document.querySelector("#sixth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#first-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#second-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#third-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#fourth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#fifth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
+    //document.querySelector("#sixth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
 }
 let celcius = null;
 let realFeel = null;
-let forecastTemp = null;
+//let forecastTemp = null;
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", displayFahrenheit);
