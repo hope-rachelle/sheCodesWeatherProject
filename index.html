@@ -12,19 +12,19 @@
   <link rel="stylesheet" href="src/styles.css">
   <title>Weather App</title>
   </head>
-<body>
+<body id="body">
   <div class="container">
     <form class="current-city">
       <input type="text" id="current-city" placeholder="Type a City..." autocomplete="off" />
       <input type="submit" value="Search" id="button" />
     </form>
-    <div class="row header">
+    <div class="row header" id="current-conditions">
      <div class="col-6">
     <h1 id="city">St. Louis</h1>
         <ul>
           <li id="date-time">Friday 7:30</li>
-          <li><span id="description"></span><span id="icon">⛅</span></li>
-          
+          <li id="description"></li>
+          <li ><img src="" alt="" id="icon"></li> 
         </ul>
      </div>
         <div class="col-6">
@@ -54,7 +54,6 @@
   <div class="col-2" id="fifth-hour-temp">5℃</div>
   <div class="col-2" id="sixth-hour-temp">5℃</div>
 </div>
-<hr>
   </div>
   </div>
   <script src="src/app.js"></script>

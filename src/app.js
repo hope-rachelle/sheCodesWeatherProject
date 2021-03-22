@@ -1,3 +1,4 @@
+//Get current time and format
 let now = new Date()
 let month = now.toLocaleDateString('default', { month: 'long' });
 //let months = now.getMonth(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])];
@@ -15,6 +16,7 @@ if (minute < 10) {
     minute = `0${minute}`;} 
 document.querySelector("#date-time").innerHTML = `${weekDay}, ${month} ${day} ${hour}:${minute}` ;
 
+//set time format for forecast
 function forecastHour(time) {
     let hourIntervals = new Date(time);
     let hour = hourIntervals.getHours();
@@ -30,27 +32,45 @@ function changeCity(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#current-city").value;
   let apiKey = "9b49b786c41ac06639af307d20e8207c";
-  let apiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=${apiKey}&units=metric`;
+  let apiWeather = `https://api.openweathermap.org/data/2.5/forecast?q=${currentCity}&appid=${apiKey}&units=metric`;
   axios.get(`${apiWeather}`).then(showWeather);
 }
 //show weather for city search//
 function showWeather(response) {
     console.log(response);
   document.querySelector("#city")
-  .innerHTML = response.data.name;
+  .innerHTML = response.data.city.name;
   document.querySelector("#current-temp")
-  .innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  .innerHTML = `${Math.round(response.data.list[0].main.temp)}°C`;
   document.querySelector("#real-feel")
-  .innerHTML = `${Math.round(response.data.main.feels_like)}°C`;
+  .innerHTML = `${Math.round(response.data.list[0].main.feels_like)}°C`;
   document.querySelector("#humidity")
-  .innerHTML = `${Math.round(response.data.main.humidity)}`;
-  document.querySelector("#description").innerHTML = response.data.weather[0].description;
-  document.querySelector("#fahrenheit").innerHTML = `${Math.round(((response.data.main.temp)* 9)/ 5 + 32)}℉`;  
+  .innerHTML = `${Math.round(response.data.list[0].main.humidity)}`;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.list[0].wind.speed);
+  document.querySelector("#description").innerHTML = response.data.list[0].weather[0].description;
+  document.querySelector("#fahrenheit").innerHTML = `${Math.round(((response.data.list[0].main.temp)* 9)/ 5 + 32)}℉`;  
+  document.querySelector("#date-time").innerHTML = null
+  document.querySelector("#first-hour-temp").innerHTML = `${Math.round(response.data.list[0].main.temp)}℃`;
+    document.querySelector("#second-hour-temp").innerHTML = `${Math.round(response.data.list[1].main.temp)}℃`;
+    document.querySelector("#third-hour-temp").innerHTML = `${Math.round(response.data.list[2].main.temp)}℃`;
+    document.querySelector("#fourth-hour-temp").innerHTML = `${Math.round(response.data.list[3].main.temp)}℃`;
+    document.querySelector("#fifth-hour-temp").innerHTML = `${Math.round(response.data.list[4].main.temp)}℃`;
+    document.querySelector("#sixth-hour-temp").innerHTML = `${Math.round(response.data.list[5].main.temp)}℃`;
+    document.querySelector("#two-hour").innerHTML = forecastHour(response.data.list[0].dt * 1000);
+    document.querySelector("#four-hour").innerHTML = forecastHour(response.data.list[1].dt * 1000);
+    document.querySelector("#six-hour").innerHTML = forecastHour(response.data.list[2].dt * 1000);
+    document.querySelector("#eight-hour").innerHTML = forecastHour(response.data.list[3].dt * 1000);
+    document.querySelector("#ten-hour").innerHTML = forecastHour(response.data.list[4].dt * 1000);
+    document.querySelector("#twelve-hour").innerHTML = forecastHour(response.data.list[5].dt * 1000);
+  let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+//city search//
 document.querySelector(".current-city").addEventListener("submit", changeCity);
 
+//Current Location weather//
 function displayWeather(conditions) {
-    console.log(conditions);
     let celcius = Math.round(conditions.data.list[0].main.temp);
     let realFeel = Math.round(conditions.data.list[0].main.feels_like);
     let fahrenheitTemp = (celcius * 9)/ 5 + 32;
@@ -73,7 +93,11 @@ function displayWeather(conditions) {
     document.querySelector("#eight-hour").innerHTML = forecastHour(conditions.data.list[3].dt * 1000);
     document.querySelector("#ten-hour").innerHTML = forecastHour(conditions.data.list[4].dt * 1000);
     document.querySelector("#twelve-hour").innerHTML = forecastHour(conditions.data.list[5].dt * 1000);
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${conditions.data.list[0].weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+//Current Location log
 function recievePosition(position) {
     console.log(position);
     let lat = position.coords.latitude;
@@ -82,24 +106,6 @@ function recievePosition(position) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     axios.get(`${apiUrl}`).then(displayWeather);
 }
+//Get Current Location upon load
 navigator.geolocation.getCurrentPosition(recievePosition);
 
-function displayFahrenheit(event) {
-    event.preventDefault();
-    let fahrenheitTemp = (celcius * 9)/ 5 + 32;
-    let fahrenheitFeel = (realFeel * 9)/ 5 + 32;
-    //let hourlyTemp = (forecastTemp * 9)/ 5 +32;
-    document.querySelector("#current-temp").innerHTML = `${Math.round(fahrenheitTemp)}℉`;
-    document.querySelector("#real-feel").innerHTML = `${Math.round(fahrenheitFeel)}℉`;
-    //document.querySelector("#first-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    //document.querySelector("#second-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    //document.querySelector("#third-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    //document.querySelector("#fourth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    //document.querySelector("#fifth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-    //document.querySelector("#sixth-hour-temp").innerHTML = `${Math.round(hourlyTemp)}℉`;
-}
-let celcius = null;
-let realFeel = null;
-//let forecastTemp = null;
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", displayFahrenheit);
