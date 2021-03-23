@@ -37,7 +37,6 @@ function changeCity(event) {
 }
 //show weather for city search//
 function showWeather(response) {
-    console.log(response);
   document.querySelector("#city")
   .innerHTML = response.data.city.name;
   document.querySelector("#current-temp")
@@ -99,7 +98,6 @@ function displayWeather(conditions) {
 }
 //Current Location log
 function recievePosition(position) {
-    console.log(position);
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     let apiKey = "9b49b786c41ac06639af307d20e8207c";
