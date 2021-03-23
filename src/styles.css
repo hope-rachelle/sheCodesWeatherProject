@@ -1,61 +1,31 @@
-#body {
-  max-width: 475px;
-  margin: 100px auto;
-  /* background-image: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-19670.jpg&fm=jpg");
-  background-image: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500*/
-  background: url("https://images.pexels.com/photos/355810/pexels-photo-355810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  background-size: cover;
-  opacity: 0.8;
-}
-.container {
-  margin-top: 30px;
-  /*background-image: linear-gradient(
-    to top,
-    #e0dee7 0%,
-    #e3e0eb 1%,
-    #faf6f7 100%
-  );*/
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  border-radius: 10px;
-  max-width: 600px;
-}
-#current-conditions {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-.current-city {
-  padding: 10px;
-}
 h1 {
   text-align: left;
   margin-top: 0px;
   margin-bottom: 0;
   margin-left: 30px;
 }
-#date-time {
-  margin-top: 5px;
-}
-#description {
-  font-size: 20px;
-}
-
 ul {
   list-style: none;
+}
+hr {
+  margin-top: 0;
+  padding-top: 0;
+}
+.container {
+  margin-top: 30px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  border-radius: 10px;
+  max-width: 600px;
+}
+.current-city {
+  padding: 10px;
 }
 .current-temp {
   font-size: 45px;
   padding-left: 20 px;
 }
-#icon {
-  font-size: 45px;
-  color: rgb(20, 109, 109);
-}
 .element {
   padding-left: 0px;
-}
-hr {
-  margin-top: 0;
-  padding-top: 0;
 }
 .hour-intervals {
   text-align: center;
@@ -64,4 +34,25 @@ hr {
   font-size: 12px;
   text-align: center;
   padding-bottom: 20px;
+}
+#body {
+  max-width: 475px;
+  margin: 100px auto;
+  background: url("https://images.pexels.com/photos/355810/pexels-photo-355810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-size: cover;
+  opacity: 0.7;
+}
+#current-conditions {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+#date-time {
+  margin-top: 5px;
+}
+#description {
+  font-size: 20px;
+}
+#icon {
+  font-size: 45px;
+  color: rgb(20, 109, 109);
 }
