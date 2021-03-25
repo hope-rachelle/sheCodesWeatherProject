@@ -94,7 +94,6 @@ function displayWeather(conditions) {
     document.querySelector("#twelve-hour").innerHTML = forecastHour(conditions.data.list[5].dt * 1000);
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${conditions.data.list[0].weather[0].icon}@2x.png`);
-    iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 //Current Location log
 function recievePosition(position) {
