@@ -36,8 +36,9 @@ hr {
   padding-bottom: 20px;
 }
 #body {
-  max-width: 475px;
   margin: 100px auto;
+  min-height: fit-content;
+  min-width: fit-content;
   background: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   background-size: cover;
   opacity: 0.7;
