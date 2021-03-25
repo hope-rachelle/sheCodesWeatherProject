@@ -37,8 +37,8 @@ hr {
 }
 #body {
   max-width: 475px;
-  margin: 100px auto;
-  background: url("https://images.pexels.com/photos/355810/pexels-photo-355810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  margin: 50px auto;
+  background: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
   background-size: cover;
   opacity: 0.7;
   background-repeat: no-repeat;
