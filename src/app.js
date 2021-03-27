@@ -22,7 +22,7 @@ function forecastHour(time) {
     let hour = hourIntervals.getHours();
     let hourCode = "pm";
     if (hour < 12) {
-    hourCode = "am"; }
+    hourCode = "am"; } 
     if (hour > 12) {
     hour = hour - 12;}
 return `${hour}${hourCode}`;}

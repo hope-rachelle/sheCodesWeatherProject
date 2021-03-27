@@ -15,7 +15,7 @@ hr {
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   border-radius: 10px;
   max-width: 500px;
-  margin-top: 30px;
+  margin-top: 100px;
 }
 .current-city {
   padding: 10px;
@@ -51,6 +51,7 @@ hr {
 }
 #date-time {
   margin-top: 5px;
+  font-size: 15px;
 }
 #description {
   font-size: 20px;
