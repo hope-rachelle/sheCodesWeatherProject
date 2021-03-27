@@ -62,7 +62,7 @@ function showWeather(response) {
     document.querySelector("#ten-hour").innerHTML = forecastHour(response.data.list[4].dt * 1000);
     document.querySelector("#twelve-hour").innerHTML = forecastHour(response.data.list[5].dt * 1000);
   let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 //city search//
@@ -93,7 +93,7 @@ function displayWeather(conditions) {
     document.querySelector("#ten-hour").innerHTML = forecastHour(conditions.data.list[4].dt * 1000);
     document.querySelector("#twelve-hour").innerHTML = forecastHour(conditions.data.list[5].dt * 1000);
     let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${conditions.data.list[0].weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${conditions.data.list[0].weather[0].icon}@2x.png`);
 }
 //Current Location log
 function recievePosition(position) {
